@@ -2,8 +2,8 @@
   // Slide 24 (sort of)
 
   $dsn = 'mysql:host=sql1.njit.edu;port=3306;dbname=YOURUCID';
-  $username = 'YOURUCID';
-  $password = 'YOURDBPASSWORD';
+  $username = 'ljm43';
+  $password = 'pass';
 
   try {
     $db = new PDO($dsn, $username, $password);
