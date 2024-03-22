@@ -38,6 +38,7 @@ $conn->close();
                 <li><a href="index.php">Home</a></li>
                 <li><a href="products.php">Products</a></li>
                 <li><a href="shipping.php">Shipping</a></li>
+                <li><a href="Selectionform.php">Add a Product</a></li>
             </ul>
         </nav>
     </header>
