@@ -1,4 +1,6 @@
+//Luke Marinelli ljm43@njit.edu 4-5/24 IT202-006
 <!DOCTYPE html>
+
 <html>
 <head>
     <title>Login</title>
@@ -20,6 +22,7 @@
     </form>
 
     <?php
+    
     
     $db = new PDO("mysql:host=localhost;dbname=culinary knife set", "root", "");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
