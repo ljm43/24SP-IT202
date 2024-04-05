@@ -1,0 +1,47 @@
+﻿<html>
+<body>
+    <form>
+        <label>Investment Amount:</label>
+        <input type="text" name="investment" id="investment" />
+        <br>
+        <label>Yearly Interest Rate:</label>
+        <input type="text" name="interest_rate" id="interest_rate" value="6.5%" />
+        <br>
+        <label>Number of Years:</label>
+        <input type="text" name="years" id="years" />
+        <br>
+        <input type="submit" />
+    </form>
+    <script>
+      // Slide 47
+      const investmentChange = () => {
+        console.log("investment = " +
+          document.querySelector("#investment").value );
+      }
+      // Slide 48
+      const yearsDoubleClick = () => {
+        console.log("years = " +
+          document.querySelector("#years").value );
+      }
+
+      // Slide 49
+      document.addEventListener(
+        "DOMContentLoaded",
+        () => {
+          // this is an anonymous arrow function
+
+          // change is when you LEAVE the input field
+          document.querySelector("#investment")
+            .addEventListener("change", investmentChange);
+
+          document.querySelector("#years")
+            .addEventListener("dblclick", yearsDoubleClick);
+
+          document.querySelector("#interest_rate").disabled = true;
+
+          document.querySelector("#investment").focus();
+        }
+      );
+    </script>
+</body>
+</html>

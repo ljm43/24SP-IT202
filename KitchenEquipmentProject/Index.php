@@ -1,4 +1,43 @@
 /*Luke Marinelli ljm43 2/29/24 IT202-006*/
+<?php
+
+session_start();
+
+
+if (!isset($_SESSION['email'])) {
+    header("Location: login.php");
+    exit();
+}
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header("Location: login.php"); 
+    exit;
+}
+
+
+$db = new PDO("mysql:host=localhost;dbname=culinary knife set", "root", "");
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+function display_welcome_message() {
+    if (isset($_SESSION['firstName'], $_SESSION['lastName'], $_SESSION['email'])) {
+        echo "Welcome {$_SESSION['firstName']} {$_SESSION['lastName']} ({$_SESSION['email']})";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h2>Home</h2>
+   
+    <?php display_welcome_message(); ?>
+</body>
+</html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +55,9 @@
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="products.php">Products</a></li>
-                <li><a href="Storefront.html">Shipping</a></li>
+                <li><a href="shipping_details.html">Shipping</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="?logout">Logout</a></li>
             </ul>
         </nav>
     </header>

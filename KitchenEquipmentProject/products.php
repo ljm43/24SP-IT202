@@ -5,9 +5,22 @@ $username = "root";
 $password = "";
 $dbname = "culinary knife set";
 
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
+
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete"])) {
+    $productCode = $_POST["delete"]; 
+    
+  
+    $deleteSql = "DELETE FROM CulinaryKnifeSet WHERE Code = '$productCode'";
+    if ($conn->query($deleteSql) === TRUE) {
+        echo "Product deleted successfully";
+    } else {
+        echo "Error deleting product: " . $conn->error;
+    }
 }
 
 $sql = "SELECT c.CategoryName, k.Code, k.Name AS ProductName, k.description AS Description, k.price AS Price
@@ -53,6 +66,10 @@ $conn->close();
                 echo "<p><strong>Product Name:</strong> " . $row["ProductName"] . "</p>";
                 echo "<p><strong>Description:</strong> " . $row["Description"] . "</p>";
                 echo "<p><strong>Price:</strong> $" . $row["Price"] . "</p>";
+                echo "<form method='post'>";
+                echo "<input type='hidden' name='delete' value='" . $row["Code"] . "'>";
+                echo "<input type='submit' value='Delete'>";
+                echo "</form>";
                 echo "</div>";
             }
         } else {
