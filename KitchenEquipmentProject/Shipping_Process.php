@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<p><strong>Shipping Company:</strong> $shipping_company</p>";
         echo "<p><strong>Shipping Class:</strong> $shipping_class</p>";
         echo "<p><strong>Tracking Number:</strong> $tracking_number</p>";
-        echo "<img src='Image/barcode.png' alt='Tracking Number Barcode'>";
+        echo "<img src='Image/ barcode.png' alt='Tracking Number Barcode'>";
         echo "<p><strong>Order Number:</strong> $order_number</p>";
         echo "<p><strong>Ship Date:</strong> $ship_date</p>";
     } else {

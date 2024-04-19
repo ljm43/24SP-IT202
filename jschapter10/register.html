@@ -1,0 +1,27 @@
+﻿<html>
+<body>
+    <form action="register.html" method="get" name="member_form" id="member_form">
+        <label>Email Address:</label>
+        <input type="text" id="email" name="email" />
+        <span>*</span>
+        <br>
+        <label>Password:</label>
+        <input type="password" id="password" name="password" placeholder="At least 6 characters." />
+        <span>*</span>
+        <br>
+        <label>Membership Type:</label>
+        <input type="radio" name="type" id="individual" value="individual" checked>Individual
+        <input type="radio" name="type" id="corporate" value="corporate">Corporate
+        <br>
+        <label>Company Name:</label>
+        <input type="text" id="company_name" name="company_name" disabled />
+        <span></span>
+        <br>
+        <input type="submit" value="Submit" />
+    </form>
+    <!-- copy-paste from releases.jquery.com -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <!-- copy-paste from releases.jquery.com -->
+    <script src="register.js"></script>
+</body>
+</html>

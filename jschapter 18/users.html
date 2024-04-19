@@ -1,0 +1,13 @@
+﻿<html>
+<body>
+    <script>
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(response => response.json())
+            .then(json => console.log(json))
+            .catch(error => console.log(error.message));
+        // TODO
+        // Visit api.nasa.gov and request API Key (email)
+        fetch("https://api.nasa.gov/planetary/apod")
+    </script>
+</body>
+</html>

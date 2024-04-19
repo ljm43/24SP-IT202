@@ -1,0 +1,63 @@
+﻿<html>
+<body>
+    <script>
+      // Slide 25
+      class Invoice {
+        constructor(subtotal, taxRate) {
+          this.subtotal = subtotal;
+          this.taxRate = taxRate;
+        }
+        getTotal() {
+          const salesTax = this.subtotal * this.taxRate;
+          return this.subtotal + salesTax;
+        }
+      }
+      const invoiceA = new Invoice(250, 0.0765);
+      const totalA = invoiceA.getTotal();
+      document.write("Total = " + totalA);
+      document.write("<br>");
+      // TODO create invoiceB
+        // get total and display total (2 digits after decimal)
+        const invoiceB = new Invoice(450, 0.0865);
+        const totalB = invoiceB.getTotal();
+        document.write("Total = " + totalB);
+        document.write("<br>");
+      
+      class Person {
+        constructor(fname, lname) {
+          this.firstName = fname;
+          this.lastName = lname;
+        }
+        get fullName() {
+          return `${this.firstName} ${this.lastName}`;
+        }
+      }
+      const grace = new Person("Grace", "Hopper");
+      document.write("Name: " + grace.fullName);
+      document.write("<br>");
+      // Slide 31
+      class Employee extends Person {
+        constructor(fname, lname, hireDate) {
+          super(fname, lname);
+          this.hireDate = hireDate;
+        }
+      }
+      const emp = new Employee("Brad", "Pitt", new Date("04/18/2024"));
+      document.write("Name: " + emp.fullName);
+      document.write("<br>");
+      document.write("Hire Date: " + emp.hireDate.toDateString());
+      document.write("<br>");
+      // Slide 49
+      const taxDay = new Date("4/15/2024");
+      document.write("Tax Day: " + taxDay.toDateString());
+      document.write("<br>");
+      Date.prototype.toNumericDateString = function() {
+        const month = this.getMonth() + 1;
+        const day = this.getDate();
+        const year = this.getFullYear();
+        return month + "/" + day + "/" + year;
+      }
+      document.write("Tax Day: " + taxDay.toNumericDateString());
+    </script>
+</body>
+</html> q
